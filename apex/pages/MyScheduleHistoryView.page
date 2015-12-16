@@ -1,0 +1,39 @@
+<apex:page controller="MyScheduleHistoryViewController" sidebar="false" id="page">
+    <apex:form id="form">
+        <apex:pageBlock id="block">
+            <apex:pageBlockSection columns="1" id="section">
+                <apex:pageBlockTable value="{!histories}" var="item">
+                    <apex:column headerValue="{!$ObjectType.MySchedule__History.Fields.CreatedById.Label}">
+                        <apex:outputField value="{!item.CreatedById}" />
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.MySchedule__History.Fields.CreatedDate.Label}">
+                        <apex:outputField value="{!item.CreatedDate}" />
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.MySchedule__History.Fields.Field.Label}">
+                        <apex:outputField value="{!item.Field}" />
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.MySchedule__History.Fields.Id.Label}">
+                        <apex:outputLink value="{!item.Id}" target="_blank">
+                            <apex:outputField value="{!item.Id}" />
+                        </apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.MySchedule__History.Fields.IsDeleted.Label}">
+                        <apex:outputField value="{!item.IsDeleted}" />
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.MySchedule__History.Fields.NewValue.Label}">
+                        <apex:outputField value="{!item.NewValue}" />
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.MySchedule__History.Fields.OldValue.Label}">
+                        <apex:outputField value="{!item.OldValue}" />
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.MySchedule__History.Fields.Field.Label}">
+                        <apex:outputField value="{!item.Field}" />
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.MySchedule__History.Fields.ParentId.Label}">
+                        <apex:outputField value="{!item.ParentId}" />
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
